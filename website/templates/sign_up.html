@@ -1,0 +1,73 @@
+{% extends "base.html" %} {% block title %}Sign Up{% endblock %} {% block
+content %}
+<style>
+  body {
+    background: linear-gradient(120deg, #ff512f, #dd2476);
+  }
+
+  .auth-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  }
+
+  .auth-card input {
+    border-radius: 10px;
+  }
+
+  .btn-success:hover {
+    background: #ffdd00;
+    color: #000;
+  }
+</style>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 auth-card">
+      <h3 class="text-center fw-bold mb-4">🆕 Create Account</h3>
+      <form method="POST">
+        <div class="form-group mb-3">
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="Email"
+            required
+          />
+        </div>
+        <div class="form-group mb-3">
+          <input
+            type="text"
+            class="form-control"
+            name="firstName"
+            placeholder="First Name"
+            required
+          />
+        </div>
+        <div class="form-group mb-3">
+          <input
+            type="password"
+            class="form-control"
+            name="password1"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <div class="form-group mb-4">
+          <input
+            type="password"
+            class="form-control"
+            name="password2"
+            placeholder="Confirm Password"
+            required
+          />
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-success px-5">Sign Up</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

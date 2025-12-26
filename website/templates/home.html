@@ -1,0 +1,75 @@
+{% extends "base.html" %} {% block title %}My Notes{% endblock %} {% block
+content %}
+<style>
+  .notes-container {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  .note-card {
+    transition: all 0.4s ease;
+    border-left: 5px solid #ffdd00;
+    border-radius: 10px;
+    padding: 10px;
+  }
+
+  .note-card:hover {
+    transform: scale(1.04);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    border-left-color: #00ffcc;
+  }
+
+  textarea {
+    resize: none;
+    border-radius: 12px;
+  }
+</style>
+
+<div class="container mt-5">
+  <div class="notes-container">
+    <h2 class="text-center fw-bold mb-4">🌈 My Secure Notes</h2>
+
+    <ul class="list-group list-group-flush mb-4">
+      {% for note in user.notes %}
+      <li
+        class="list-group-item d-flex justify-content-between align-items-center note-card"
+      >
+        <span>{{ note.data }}</span>
+        <div>
+          <a
+            href="{{ url_for('views.edit_note', id=note.id) }}"
+            class="btn btn-sm btn-warning mr-2"
+            >✏ Edit</a
+          >
+          <button
+            type="button"
+            class="btn btn-sm btn-danger"
+            onclick="deleteNote('{{ note.id }}')"
+          >
+            ✖
+          </button>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+
+    <form method="POST">
+      <div class="form-group">
+        <textarea
+          name="note"
+          id="note"
+          class="form-control mb-3"
+          rows="3"
+          placeholder="Write your private note here..."
+        ></textarea>
+      </div>
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary px-5">➕ Add Note</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

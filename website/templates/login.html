@@ -1,0 +1,60 @@
+{% extends "base.html" %} {% block title %}Login{% endblock %} {% block content
+%}
+<style>
+  body {
+    background: url("https://images.unsplash.com/photo-1517511620798-cec17d428bc0?auto=format&fit=crop&w=1470&q=80")
+      no-repeat center center fixed;
+    background-size: cover;
+  }
+
+  .auth-card {
+    background: rgba(0, 0, 0, 0.75);
+    color: #fff;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  }
+
+  .auth-card input {
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
+    color: #000;
+  }
+
+  .btn-dark:hover {
+    background: #ff00ff;
+    border-color: #ff00ff;
+  }
+</style>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-5 auth-card">
+      <h3 class="text-center fw-bold mb-4">🔐 Login</h3>
+      <form method="POST">
+        <div class="form-group mb-3">
+          <input
+            type="email"
+            class="form-control"
+            name="email"
+            placeholder="Email address"
+            required
+          />
+        </div>
+        <div class="form-group mb-3">
+          <input
+            type="password"
+            class="form-control"
+            name="password1"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-dark px-5">Login</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

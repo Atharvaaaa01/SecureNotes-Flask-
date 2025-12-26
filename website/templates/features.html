@@ -1,0 +1,123 @@
+{% extends "base.html" %} {% block title %}Features{% endblock %} {% block
+content %}
+<style>
+  .hero {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: white;
+    padding: 70px 25px;
+    border-radius: 18px;
+  }
+
+  .feature-card {
+    border: none;
+    border-radius: 16px;
+    transition: all 0.3s ease;
+  }
+
+  .feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+
+  .feature-icon {
+    font-size: 3rem;
+  }
+
+  .section-title {
+    font-weight: 700;
+  }
+</style>
+
+<div class="container mt-5">
+  <!-- HERO -->
+  <div class="hero text-center mb-5">
+    <h1 class="fw-bold">📝 Secure Notes, Built for You</h1>
+    <p class="lead mt-3">Your notes. Your account. Your privacy.</p>
+  </div>
+
+  <!-- CORE FEATURES -->
+  <h2 class="text-center section-title mb-4">Core Features</h2>
+
+  <div class="row">
+    <div class="col-md-4 mb-4">
+      <div class="card feature-card text-center p-4">
+        <div class="feature-icon mb-3">🔐</div>
+        <h5 class="fw-bold">Private User Accounts</h5>
+        <p class="text-muted">
+          Each user has a secure account. Notes are visible
+          <strong>only after logging in</strong>.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card feature-card text-center p-4">
+        <div class="feature-icon mb-3">🧠</div>
+        <h5 class="fw-bold">User-Specific Notes</h5>
+        <p class="text-muted">
+          Every note is linked to a specific user. No one else can access your
+          notes.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-4 mb-4">
+      <div class="card feature-card text-center p-4">
+        <div class="feature-icon mb-3">🔑</div>
+        <h5 class="fw-bold">Encrypted Passwords</h5>
+        <p class="text-muted">
+          Passwords are securely hashed using
+          <strong>PBKDF2 encryption</strong>.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ADVANCED FEATURES -->
+  <h2 class="text-center section-title mt-5 mb-4">Security & Reliability</h2>
+
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card feature-card p-4">
+        <h5 class="fw-bold">🚫 No Unauthorized Access</h5>
+        <p class="text-muted">
+          Without the correct email and password, notes cannot be viewed,
+          edited, or deleted.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card feature-card p-4">
+        <h5 class="fw-bold">🗂 Secure Database Storage</h5>
+        <p class="text-muted">
+          Notes are stored securely in the database and mapped to individual
+          user accounts.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EXTRA -->
+  <div class="row">
+    <div class="col-md-6 mb-4">
+      <div class="card feature-card p-4">
+        <h5 class="fw-bold">⚡ Fast & Responsive</h5>
+        <p class="text-muted">
+          Lightweight Flask backend ensures fast loading and smooth note
+          handling.
+        </p>
+      </div>
+    </div>
+
+    <div class="col-md-6 mb-4">
+      <div class="card feature-card p-4">
+        <h5 class="fw-bold">🛠 Scalable Architecture</h5>
+        <p class="text-muted">
+          Designed to support multiple users efficiently without data leaks.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

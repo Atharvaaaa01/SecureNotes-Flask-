@@ -1,0 +1,34 @@
+{% extends "base.html" %} {% block title %}Edit Note{% endblock %} {% block
+content %}
+<style>
+  .edit-card {
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8 edit-card">
+      <h3 class="fw-bold mb-4 text-center">✏ Edit Note</h3>
+
+      <form method="POST">
+        <div class="form-group">
+          <textarea name="note" class="form-control" rows="5" required>
+{{ note.data }}</textarea
+          >
+        </div>
+
+        <div class="text-center mt-4">
+          <button type="submit" class="btn btn-success px-5">
+            💾 Save Changes
+          </button>
+          <a href="/" class="btn btn-secondary ml-3"> Cancel </a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
